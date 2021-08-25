@@ -4,7 +4,7 @@ import { ContactsService } from './contacts.service';
 
 @Controller('contacts')
 export class ContactsController {
-    constructor(private readonly contactsService: ContactsService) {}
+    constructor(private readonly contactsService: ContactsService) { }
     @Get()
     async getAll(): Promise<Contact[]> {
         return await this.contactsService.getAll();
@@ -12,7 +12,7 @@ export class ContactsController {
 
     @Get('/:id')
     async get(@Param('id') id): Promise<Contact> {
-      return await this.contactsService.get(Number(id));
+        return await this.contactsService.get(Number(id));
     }
 
     @Post()
